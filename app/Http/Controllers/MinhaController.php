@@ -17,6 +17,8 @@ class MinhaController extends Controller
     	$novoProduto->quantidade = $request->quantidade;
 
     	$novoProduto->save();
+
+    	return response()->json(['Produto criado com sucesso!']);
     }
 
     public function getProduto($id){
@@ -52,6 +54,6 @@ class MinhaController extends Controller
     public function deletarProduto($id){
 
     	produto::destroy($id);
-    	
+
     }
 }
